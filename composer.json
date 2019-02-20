@@ -28,7 +28,7 @@
       "src/Class"
     ],
     "psr-4": {
-      "App\\": "src/"
+      "Siu\\": "src/Class"
     }
   },
   "autoload-dev": {

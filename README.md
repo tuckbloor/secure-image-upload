@@ -8,8 +8,9 @@
 
     Checks the image type using
 
-    recreates A new image from the uploaded image
+    Renames the uploaded image with unique();
 
+    Recreates A new image from the uploaded image
 
      The following are PHP requirements
 
@@ -20,11 +21,11 @@
     For Testing
 
     <?php
-
-        //include the image SecureImageUpload Class here
+    
+        require_once __DIR__ . '/vendor/autoload.php';
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $test = new SecureImageUpload($_FILES);
+            $test = new Siu\SecureImageUpload($_FILES);
             $test->save();
         }
     ?>
@@ -34,4 +35,5 @@
         <input type="file" name="Image"/>
         <input type="submit" value="Upload"/>
     </form>
+
 

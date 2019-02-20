@@ -1,5 +1,7 @@
 <?php
 
+    namespace Siu;
+
     class SecureImageUpload
     {
         protected $allowed_extensions = ["jpg", "jpeg", "png", 'gif'];
@@ -40,7 +42,7 @@
          * @param string $dir
          * @message you may want to use .htaccess for more security in the uploaded file directory
          */
-        public function __construct($file, $dir = '../../images') {
+        public function __construct($file, $dir = './images') {
 
             if (!extension_loaded('gd')) {
 
@@ -161,8 +163,8 @@
          */
         protected function renameFile()
         {
-            //timestamp + unique id for the file_name
-            return $this->new_file_name = time() . '-' . uniqid() . '-' .  '.' . $this->extension;
+            //unique id for the file_name
+            return $this->new_file_name = uniqid() . '.' . $this->extension;
         }
 
         /**
@@ -171,8 +173,20 @@
         protected function createNewImage()
         {
 
+            //if directory does not exist
+
             if(!is_dir($this->dir)) {
+
+                //create the directory
                 mkdir($this->dir, 0777);
+
+                //create index file
+                $index = fopen($this->dir . '/' . 'index.html', "w") or die("Unable to open file!");
+                $txt = "<h1>Nothing Here</h1>";
+
+                fwrite($index, $txt);
+                fclose($index);
+
             }
 
             switch ($this->extension) {
