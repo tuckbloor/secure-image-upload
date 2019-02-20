@@ -194,7 +194,7 @@
                         break;
             }
 
-            //check to see if the image was uploaded
+            //check to see if the image was su
             $this->checkIfFileExists();
         }
 
