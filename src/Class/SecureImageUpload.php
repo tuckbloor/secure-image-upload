@@ -198,14 +198,14 @@
 
                 case "jpg":
                 case "jpeg":
-                        imagecreatefromjpeg($this->file);
+                        $this->img = imagecreatefromjpeg($this->file);
                         imagejpeg($this->img, $this->dir . '/' . $this->new_file_name);
-                        break;
+                    break;
 
                 case "gif":
-                        imagecreatefromgif($this->file);
+                        $this->img = imagecreatefromgif($this->file);
                         imagegif($this->img, $this->dir . '/' . $this->new_file_name);
-                        break;
+                    break;
             }
 
             //check to see if the image was su
@@ -252,3 +252,4 @@
             }
         }
     }
+
