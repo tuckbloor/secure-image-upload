@@ -1,0 +1,39 @@
+{
+  "name": "tuckbloor/secure-image-upload",
+  "description": "A PHP Class That Securely Uploads Images And Checks The MEME Type, If The Uploaded File Is Valid The Class Creates A New Image And Destroys The Old Image",
+  "keywords": [
+    "upload",
+    "image",
+    "php",
+    "secure",
+    "securely",
+    "security"
+  ],
+  "homepage":"http://www.codecavern.co.uk",
+  "license": "MIT",
+  "authors":[
+    {
+      "name":"tuck"
+    }
+  ],
+  "type": "library",
+  "require": {
+    "php": ">= 5.3.0"
+  },
+  "require-dev": {
+    "filp/whoops": "2.3.*"
+  },
+  "autoload": {
+    "classmap": [
+      "src/Class"
+    ],
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  }
+}
