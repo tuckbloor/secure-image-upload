@@ -25,7 +25,7 @@
 
         protected $size;
 
-        protected $max_size = 100000000;
+        protected $max_size = 1000000;
 
         protected $extension;
 
@@ -42,7 +42,7 @@
          * @param string $dir
          * @message you may want to use .htaccess for more security in the uploaded file directory
          */
-        public function __construct($file, $dir = './images') {
+        public function __construct($file, $dir = 'images') {
 
             if (!extension_loaded('gd')) {
 
@@ -178,7 +178,7 @@
             if(!is_dir($this->dir)) {
 
                 //create the directory
-                mkdir($this->dir, 0777);
+                mkdir($this->dir, 0775);
 
                 //create index file
                 $index = fopen($this->dir . '/' . 'index.html', "w") or die("Unable to open file!");
@@ -237,7 +237,9 @@
         {
             //display the error
             echo $this->error_array_message[$error] . "<br>";
+
             $this->error = true;
+
             return false;
         }
 
