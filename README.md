@@ -6,7 +6,7 @@
 
     Checks the image size
 
-    Checks the image type using
+    Checks the image type using exif_imagetype
 
     Renames the uploaded image with unique();
 
