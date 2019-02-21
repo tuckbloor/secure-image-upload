@@ -1,22 +1,22 @@
 # Secure Image Upload
 
-    A simple php script that securely uploads images
+A simple php script that securely uploads images
 
-    Checks the extension type
+Checks the extension type
 
-    Checks the image size
+Checks the image size
 
-    Checks the image type using exif_imagetype
+Checks the image type using exif_imagetype
 
-    Renames the uploaded image with unique();
+Renames the uploaded image with unique();
 
-    Recreates A new image from the uploaded image
+Recreates A new image from the uploaded image
 
-     The following are PHP requirements
+The following are PHP requirements
 
-      1) PHP >= 5.3
-      2) GD Extension
-      3) exif_imagetype function
+   1) PHP >= 5.3
+   2) GD Extension
+   3) exif_imagetype function
 
     For Testing
 
